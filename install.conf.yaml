@@ -46,8 +46,73 @@
         create: true
         relink: false
         force: false
+    ~/.rtorrent.rc:
+        path: rtorrent.rc
+        create: true
+        relink: false
+        force: false
+    ~/.mpd:
+        path: mpd/
+        create: true
+        relink: false
+        force: false
+    ~/.mpdscribble:
+        path: mpdscribble/
+        create: true
+        relink: false
+        force: false
+    ~/.ncmpcpp:
+        path: ncmpcpp/
+        create: true
+        relink: false
+        force: false
     ~/.config/awesome:
         path: config/awesome/
+        create: true
+        relink: false
+        force: false
+    ~/.config/cower:
+        path: config/cower/
+        create: true
+        relink: false
+        force: false
+    ~/.config/dunst:
+        path: config/dunst/
+        create: true
+        relink: false
+        force: false
+    ~/.config/fish:
+        path: config/fish/
+        create: true
+        relink: false
+        force: false
+    ~/.config/flexget:
+        path: config/flexget/
+        create: true
+        relink: false
+        force: false
+    ~/.config/fontconfig:
+        path: config/fontconfig/
+        create: true
+        relink: false
+        force: false
+    ~/.config/qtile:
+        path: config/qtile/
+        create: true
+        relink: false
+        force: false
+    ~/.config/rofi-pass:
+        path: config/rofi-pass/
+        create: true
+        relink: false
+        force: false
+    ~/.config/termite:
+        path: config/termite/
+        create: true
+        relink: false
+        force: false
+    ~/.config/redshift.conf:
+        path: config/redshift.conf
         create: true
         relink: false
         force: false

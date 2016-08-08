@@ -1,0 +1,3 @@
+TargetDir = /home/ali/aur/
+ConnectTimeout = 5
+MaxThreads = 3

@@ -1,0 +1,27 @@
+sw_volume: 93
+audio_device_state:0:My HTTP Stream
+audio_device_state:1:MPD Pulse Output
+state: stop
+current: 0
+random: 0
+repeat: 1
+single: 0
+consume: 0
+crossfade: 5
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Persian/Chaartaar/2014 - Baran Toee/01 - Ashoobam.mp3
+1:Persian/Chaartaar/2014 - Baran Toee/02 - Mara Be Khaterat Negah Dar.mp3
+2:Persian/Chaartaar/2014 - Baran Toee/03 - Hendeseh.mp3
+3:Persian/Chaartaar/2014 - Baran Toee/04 - Baran Toee.mp3
+4:Persian/Chaartaar/2014 - Baran Toee/05 - Zane Divaneh.mp3
+5:Persian/Chaartaar/2014 - Baran Toee/06 - Kalagh.mp3
+6:Persian/Chaartaar/2014 - Baran Toee/07 - Asheghaneh Tanhast.mp3
+7:Persian/Chaartaar/2014 - Baran Toee/08 - Harfi Bezan.mp3
+8:Persian/Chaartaar/2014 - Baran Toee/09 - Khosha Be Man.mp3
+9:Persian/Chaartaar/2014 - Baran Toee/10 - Shabihe Yek Mordaab.mp3
+10:Persian/Chaartaar/2014 - Baran Toee/11 - Dar Hasrate Mah.mp3
+11:Persian/Chaartaar/2014 - Baran Toee/12 - Ghatar (Chaartaar).mp3
+12:English/VA/Singles/01 - Don't Tell Me That It's Over.mp3
+playlist_end
