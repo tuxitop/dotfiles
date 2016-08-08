@@ -1,6 +1,11 @@
 - clean: ['~']
 
 - link:
+    ~/.aria2/aria2.daemon:
+        path: aria2/aria2.daemon
+        create: false
+        relink: false
+        force: false
     ~/.gitconfig:
         path: gitconfig
         create: false
