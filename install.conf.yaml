@@ -1,0 +1,55 @@
+- clean: ['~']
+
+- link:
+    ~/.gitconfig:
+        path: gitconfig
+        create: false
+        relink: false
+        force: false
+    ~/.ssh/config:
+        path: ssh/config
+        create: true
+        relink: false
+        force: false
+    ~/.tmux.conf:
+        path: tmux.conf
+        create: false
+        relink: false
+        force: false
+    ~/.vim/vimrc:
+        path: vim/vimrc
+        create: true
+        relink: false
+        force: false
+    ~/.zshrc:
+        path: zshrc
+        create: false
+        relink: false
+        force: false
+    ~/bin:
+        path: bin/
+        create: true
+        relink: false
+        force: false
+    ~/.Xresources:
+        path: Xresources
+        create: false
+        relink: false
+        force: false
+    ~/.xinitrc:
+        path: xinitrc
+        create: false
+        relink: false
+        force: false
+    ~/.i3:
+        path: i3/
+        create: true
+        relink: false
+        force: false
+    ~/.config/awesome:
+        path: config/awesome/
+        create: true
+        relink: false
+        force: false
+
+

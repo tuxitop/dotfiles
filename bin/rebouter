@@ -1,0 +1,37 @@
+#!/usr/bin/expect -f
+
+set timeout 3
+
+# router user name
+set name "admin"
+
+# router password
+set pass "adminpass1"
+
+# router IP address
+set routerip "192.168.1.1"
+
+# start telnet
+spawn telnet $routerip
+
+# send username &amp; password
+#expect "Login:"
+#send -- "$name\r"
+expect "Password:"
+send -- "$pass\r"
+
+# get out of ISP's  Stupid menu program, go to shell
+#expect " -&gt; "
+expect -exact "\r
+Copyright (c) 2001 - 2006 TP-LINK TECHNOLOGIES CO., LTD\r
+tc> "
+
+# execute command
+# send -- "set reboot\r"
+send -- "wan adsl res\r"
+
+# exit
+expect "\r
+tc>  "
+send -- "exit\r"
+expect eof

@@ -1,0 +1,7 @@
+[user]
+	name = Ali Mousavi
+	email = ali.mousavi@gmail.com
+[core]
+	askpass = 
+[push]
+	default = simple

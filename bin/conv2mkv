@@ -1,0 +1,90 @@
+#! /bin/sh
+
+# filename:    conv2mkv
+# description: convert video files to mkv using ffmpeg. for usage and setting che              ck below
+# Author:      Ali Mousavi [ali.mousavi@gmail.com]
+
+################
+###  USAGE   ###
+################
+# if a filename is given as an argument it will convert it.
+#                 conv2mkv filename
+#
+# if "d" is used as an argument, it will convert videos in the working
+# directory.
+#                 conv2mkv -d
+#
+# if "-dr" is used as an argument it will convert videos in the working
+# direcroty and its subdirectories recursively.
+#                 conv2mkv -dr
+
+# this function converts given filename
+convert2mkv() {
+    INPUT="$1"
+    OUTPUT="$(echo $1 | sed -r -e 's/\.\w+$/.mkv/')"
+    VCODEC="libx264"       # Video Codec
+    # libfdk_aac might not be compiled in the default ffmpeg binary of the
+    # distribution. might need to find another package.
+    ACODEC="libfdk_aac"    # Audio codec to use: libfdk_aac > aac
+    ABITRATE="192k"        # Audio bitrate
+    VBITRATE_TS="4M"       # Video bitrate to use for .ts files.
+    # This is the compression speed. the slower the better.
+    PRESET="medium"        # veryslow > slower > slow > medium > fast > faster
+                           # > veryfast > superfast > ultrafast
+
+    # check if the file already has the desired format and if so just copy it
+    # to the new container.
+    if ffprobe "${INPUT}" 2>&1 | grep "Video: h264"; then
+        VCODEC="copy"
+    fi
+    if ffprobe "${INPUT}" 2>&1 | grep "Audio: aac"; then
+        ACODEC="copy"
+    fi
+
+    # also if it's a .ts file just copy streams over since converting streams
+    # would be very lossy and buggy. if you know a better way tell me.
+    if [ "${INPUT: -3}" == ".ts" ]; then
+        VCODEC="copy"
+        ACODEC="copy"
+    fi
+    ffmpeg -i "${INPUT}" -c:v "${VCODEC}" -preset ${PRESET} -c:a "${ACODEC}" -b:a ${ABITRATE} "${OUTPUT}"
+}
+
+# export the function so that we can use it as an argument for -exec in find
+export -f convert2mkv
+
+# show a help message if no argument is specified
+if [[ $# -eq 0 ]] ; then
+    echo "Error: No arguments specified."
+    echo "Usage:"
+    echo "conv2mkv [file]    convert file to mkv."
+    echo "conv2mkv -d        convert files in the working dir to mkv."
+    echo "conv2mkv -dr       convert files in the working dir and its subdirs."
+    exit 1
+fi
+
+case "$1" in
+    # find and convert video files in the working dir and its subdirs.
+    "-dr")
+        find . -type f \( -iname '*.mpg' -o \
+            -iname '*.mpeg' -o \
+            -iname '*.wmv' -o \
+            -iname '*.mp4' -o \
+            -iname '*.avi' -o \
+            -iname '*.m4v' -o \
+            -iname '*.flv' -o \
+            -iname '*.ts' \) \
+            -exec bash -c 'convert2mkv "$0"' {} \;;;
+    "-d")
+        find . -maxdepth 1 -type f \( -iname '*.mpg' -o \
+            -iname '*.mpeg' -o \
+            -iname '*.wmv' -o \
+            -iname '*.mp4' -o \
+            -iname '*.avi' -o \
+            -iname '*.m4v' -o \
+            -iname '*.flv' -o \
+            -iname '*.ts' \) \
+            -exec bash -c 'convert2mkv "$0"' {} \;;;
+    *)
+        convert2mkv "$1"
+esac
