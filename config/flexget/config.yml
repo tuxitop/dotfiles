@@ -10,7 +10,8 @@ templates:
                 - piratebay:
                     category: 207
         imdb_lookup: yes
-        list_queue:
+        list_match:
+            from:
                 - movie_list: trakt movies
         exec:
             allow_background: no
@@ -58,7 +59,7 @@ templates:
                 alternate_name: Shameless (US)
         discover:
             what:
-                - trakt_emit:
+                - next_trakt_episodes:
                     username: tuxitop
                     account: tuxitop
                     context: collected
@@ -71,7 +72,7 @@ templates:
             allow_background: no
             auto_escape: no
             on_output:
-                for_accepted: ruby /usr/share/doc/aria2/xmlrpc/aria2rpc addUri "{{url}}" --dir="home/ali/Downloads/aria2/flexget/Series/{{series_name}}" --pause="true"
+                for_accepted: ruby /usr/share/doc/aria2/xmlrpc/aria2rpc addUri "{{url}}" --dir="/home/ali/Downloads/aria2/flexget/Series/" --pause="true"
         # Mark accepted torrents as collected in trakt.
         list_add:
             - trakt_list:
@@ -80,57 +81,57 @@ templates:
                 list: collection
 
 tasks:
-    ### MOVIES
-    download-queue:
-        priority: 10
-        trakt_list:
-            username: tuxitop
-            account: tuxitop
-            list: watchlist
-            type: movies
-        accept_all: yes
-        list_add:
-            - movie_list: trakt movies
-
-    movies-NO-YIFY-720p:
-        priority: 20
-        content_size:
-            max: 2000
-        assume_quality: 720p webrip h264 mp3
-        quality: 720p webrip+ h264+ mp3+
-        regexp:
-            reject:
-                - YIFI
-        template: download-movie
-    movies-720p:
-        priority: 30
-        content_size:
-            max: 2000
-        assume_quality: 720p webrip h264 mp3
-        quality: 720p webrip+ h264+ mp3+
-        template: download-movie
-    movies-NO-YIFY-720pOrUp:
-        priority: 40
-        content_size:
-            max: 2000
-        assume_quality: 720p webrip h264 mp3
-        quality: 720p+ webrip+ h264+ mp3+
-        regexp:
-            reject:
-                - YIFI
-        template: download-movie
-    movies-NO-YIFY-720pOrUp:
-        priority: 45
-        content_size:
-            max: 2000
-        assume_quality: 720p webrip h264 mp3
-        quality: 720p+ webrip+ h264+ mp3+
-        template: download-movie
+#    ### MOVIES
+#    download-queue:
+#        priority: 10
+#        trakt_list:
+#            username: tuxitop
+#            account: tuxitop
+#            list: watchlist
+#            type: movies
+#        accept_all: yes
+#        list_add:
+#            - movie_list: trakt movies
+#
+#    movies-NO-YIFY-720p:
+#        priority: 20
+#        content_size:
+#            max: 2000
+#        assume_quality: 720p webrip h264 mp3
+#        quality: 720p webrip+ h264+ mp3+
+#        regexp:
+#            reject:
+#                - YIFI
+#        template: download-movie
+#    movies-720p:
+#        priority: 30
+#        content_size:
+#            max: 2000
+#        assume_quality: 720p webrip h264 mp3
+#        quality: 720p webrip+ h264+ mp3+
+#        template: download-movie
+#    movies-NO-YIFY-720pOrUp:
+#        priority: 40
+#        content_size:
+#            max: 2000
+#        assume_quality: 720p webrip h264 mp3
+#        quality: 720p+ webrip+ h264+ mp3+
+#        regexp:
+#            reject:
+#                - YIFI
+#        template: download-movie
+#    movies-NO-YIFY-720pOrUp:
+#        priority: 45
+#        content_size:
+#            max: 2000
+#        assume_quality: 720p webrip h264 mp3
+#        quality: 720p+ webrip+ h264+ mp3+
+#        template: download-movie
 
     ### SERIES
     sync-trakt:
         priority: 40
-        trakt_emit:
+        next_trakt_episodes:
             username: tuxitop
             account: tuxitop
             context: collected
@@ -140,16 +141,16 @@ tasks:
     series-showRSS:
         priority: 50
         rss: https://showrss.info/user/81827.rss?magnets=true&namespaces=true&name=clean&quality=null&re=null
+        template: trakt-shows-any
         series:
             - Shameless:
                 alternate_name: Shameless (US)
-        template: trakt-shows-any
         accept_all: yes
         exec:
             allow_background: no
             auto_escape: no
             on_output:
-                for_accepted: ruby /usr/share/doc/aria2/xmlrpc/aria2rpc addUri "{{url}}" --dir="home/ali/Downloads/aria2/flexget/Series/{{series_name}}" --pause="true"
+                for_accepted: ruby /usr/share/doc/aria2/xmlrpc/aria2rpc addUri "{{url}}" --dir="/home/ali/Downloads/aria2/flexget/Series/" --pause="true"
 #        aria2:
 #            exclude_samples: yes
 #            exclude_non_content: yes

@@ -2717,3 +2717,751 @@
 2016-08-06 22:35 ERROR    discover      movies-NO-YIFY-720p Error searching with piratebay: RequestException: HTTPConnectionPool(host='thepiratebay.se', port=80): Max retries exceeded with url: /search/The%20Girl%20on%20the%20Train%20%282016%29/0/7/207 (Caused by ProtocolError('Connection aborted.', error(104, 'Connection reset by peer')))
 2016-08-07 09:39 WARNING  discover      series-piratebay Error during input plugin trakt_emit: Unable to get trakt list `watchlist`: ('Connection aborted.', error(104, 'Connection reset by peer'))
 2016-08-07 22:39 WARNING  discover      series-any      Error during input plugin trakt_emit: An error has occured looking up: Trakt_id: 56872 Error: HTTPSConnectionPool(host='api-v2launch.trakt.tv', port=443): Read timed out. (read timeout=30)
+2016-08-17 22:32 CRITICAL manager                       [/templates/download-movie] The key `list_queue` is not valid here. Only known plugin names are valid keys.
+2016-08-17 22:32 CRITICAL manager                       [/templates/trakt-discover-show/discover/what/0] The key `trakt_emit` is not valid here. Only known plugin names are valid keys.
+2016-08-17 22:32 CRITICAL manager                       [/tasks/sync-trakt] The key `trakt_emit` is not valid here. Only known plugin names are valid keys.
+2016-08-17 22:32 CRITICAL manager                       Failed to load config file: Did not pass schema validation.
+2016-08-17 22:32 CRITICAL manager                       [/templates/download-movie] The key `list_queue` is not valid here. Only known plugin names are valid keys.
+2016-08-17 22:32 CRITICAL manager                       [/templates/trakt-discover-show/discover/what/0] The key `trakt_emit` is not valid here. Only known plugin names are valid keys.
+2016-08-17 22:32 CRITICAL manager                       [/tasks/sync-trakt] The key `trakt_emit` is not valid here. Only known plugin names are valid keys.
+2016-08-17 22:32 CRITICAL manager                       Failed to load config file: Did not pass schema validation.
+2016-08-17 22:48 CRITICAL manager                       [/templates/download-movie] The key `list_queue` is not valid here. Only known plugin names are valid keys.
+2016-08-17 22:48 CRITICAL manager                       Failed to load config file: Did not pass schema validation.
+2016-08-17 22:51 INFO     manager                       Database upgrade is required. Attempting now.
+2016-08-17 22:51 INFO     schema                        Plugin api_tmdb database is not upgradable. Flushing data and regenerating.
+2016-08-17 22:51 INFO     schema                        Plugin tvmaze database is not upgradable. Flushing data and regenerating.
+2016-08-17 22:51 VERBOSE  task_queue                    There are 8 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 22:51 VERBOSE  trakt_list    download-queue  Retrieving `movies` list `watchlist`
+2016-08-17 22:51 VERBOSE  details       download-queue  Produced 1 entries.
+2016-08-17 22:51 VERBOSE  task          download-queue  REJECTED: `The Girl on the Train (2016)` by seen plugin because entry with title `The Girl on the Train (2016)` is already marked seen in the task download-queue at 2016-07-31 18:38
+2016-08-17 22:51 VERBOSE  details       download-queue  Summary - Accepted: 0 (Rejected: 1 Undecided: 0 Failed: 0)
+2016-08-17 22:51 VERBOSE  list_add      download-queue  adding accepted entries into movie_list - trakt movies
+2016-08-17 22:51 VERBOSE  assume_quality movies-NO-YIFY-720p New assumption: any is 720p webrip h264 mp3
+2016-08-17 22:51 VERBOSE  discover      movies-NO-YIFY-720p Discovering 1 titles ...
+2016-08-17 22:51 VERBOSE  discover      movies-NO-YIFY-720p Searching for `The Girl on the Train (2016)` with plugin `piratebay` (1 of 1)
+2016-08-17 22:51 VERBOSE  discover      movies-NO-YIFY-720p No search results for `The Girl on the Train (2016)`
+2016-08-17 22:51 VERBOSE  details       movies-NO-YIFY-720p Task didn't produce any entries.
+2016-08-17 22:51 VERBOSE  details       movies-NO-YIFY-720p Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 22:51 VERBOSE  list_remove   movies-NO-YIFY-720p removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 22:51 VERBOSE  list_add      movies-NO-YIFY-720p adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 22:51 VERBOSE  list_match    movies-NO-YIFY-720p removing accepted entries from movie_list - trakt movies
+2016-08-17 22:51 VERBOSE  assume_quality movies-720p     New assumption: any is 720p webrip h264 mp3
+2016-08-17 22:52 VERBOSE  discover      movies-720p     Discovering 1 titles ...
+2016-08-17 22:52 VERBOSE  discover      movies-720p     Searching for `The Girl on the Train (2016)` with plugin `piratebay` (1 of 1)
+2016-08-17 22:52 VERBOSE  discover      movies-720p     No search results for `The Girl on the Train (2016)`
+2016-08-17 22:52 VERBOSE  details       movies-720p     Task didn't produce any entries.
+2016-08-17 22:52 VERBOSE  details       movies-720p     Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 22:52 VERBOSE  list_remove   movies-720p     removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 22:52 VERBOSE  list_add      movies-720p     adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 22:52 VERBOSE  list_match    movies-720p     removing accepted entries from movie_list - trakt movies
+2016-08-17 22:52 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 22:52 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 22:52 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 22:52 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 22:52 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 22:52 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 22:52 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 22:52 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 22:52 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 22:52 VERBOSE  assume_quality movies-NO-YIFY-720pOrUp New assumption: any is 720p webrip h264 mp3
+2016-08-17 22:52 VERBOSE  discover      movies-NO-YIFY-720pOrUp Discovering 1 titles ...
+2016-08-17 22:52 VERBOSE  discover      movies-NO-YIFY-720pOrUp Searching for `The Girl on the Train (2016)` with plugin `piratebay` (1 of 1)
+2016-08-17 22:52 VERBOSE  discover      movies-NO-YIFY-720pOrUp No search results for `The Girl on the Train (2016)`
+2016-08-17 22:52 VERBOSE  details       movies-NO-YIFY-720pOrUp Task didn't produce any entries.
+2016-08-17 22:52 VERBOSE  details       movies-NO-YIFY-720pOrUp Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 22:52 VERBOSE  list_remove   movies-NO-YIFY-720pOrUp removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 22:52 VERBOSE  list_add      movies-NO-YIFY-720pOrUp adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 22:52 VERBOSE  list_match    movies-NO-YIFY-720pOrUp removing accepted entries from movie_list - trakt movies
+2016-08-17 22:52 VERBOSE  trakt_list    series-showRSS  Retrieving `shows` list `watchlist`
+2016-08-17 22:52 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 22:52 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 22:52 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 22:52 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 22:52 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by accept_all plugin
+2016-08-17 22:52 VERBOSE  details       series-showRSS  Summary - Accepted: 2 (Rejected: 2 Undecided: 0 Failed: 0)
+2016-08-17 22:52 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 22:52 ERROR    exec          series-showRSS  Could not set exec command for Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes: (UndefinedError) 'series_name' is undefined
+2016-08-17 22:52 ERROR    exec          series-showRSS  Could not set exec command for Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER: (UndefinedError) 'series_name' is undefined
+2016-08-17 22:52 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 22:52 VERBOSE  discover      series-piratebay Searching for `Rick and Morty S03E01` with plugin `piratebay` (1 of 6)
+2016-08-17 22:53 VERBOSE  discover      series-piratebay No search results for `Rick and Morty S03E01`
+2016-08-17 22:53 VERBOSE  discover      series-piratebay Searching for `True Detective S02E02` with plugin `piratebay` (2 of 6)
+2016-08-17 22:53 VERBOSE  discover      series-piratebay Searching for `Doctor Who S10E01` with plugin `piratebay` (3 of 6)
+2016-08-17 22:53 VERBOSE  discover      series-piratebay No search results for `Doctor Who S10E01`
+2016-08-17 22:53 VERBOSE  discover      series-piratebay Searching for `Game of Thrones S05E01` with plugin `piratebay` (4 of 6)
+2016-08-17 22:53 VERBOSE  discover      series-piratebay Searching for `Sherlock S04E01` with plugin `piratebay` (5 of 6)
+2016-08-17 22:54 VERBOSE  discover      series-piratebay No search results for `Sherlock S04E01`
+2016-08-17 22:54 VERBOSE  discover      series-piratebay Searching for `House of Cards S05E01` with plugin `piratebay` (6 of 6)
+2016-08-17 22:54 VERBOSE  discover      series-piratebay No search results for `House of Cards S05E01`
+2016-08-17 22:54 VERBOSE  details       series-piratebay Produced 21 entries.
+2016-08-17 22:54 VERBOSE  task          series-piratebay REJECTED: `Game of thrones S05E01 GR SUBS 720p -YazooMix` by torrent_alive plugin because had < 1 required seeds. (0)
+2016-08-17 22:54 VERBOSE  task          series-piratebay REJECTED: `Game of Thrones S05E01 480p` by torrent_alive plugin because had < 1 required seeds. (0)
+2016-08-17 22:54 VERBOSE  task          series-piratebay REJECTED: `Game Of Thrones S05e01-10, [Mux - H264 - Ita Aac] COMPLETE SEASO` by torrent_alive plugin because had < 1 required seeds. (0)
+2016-08-17 22:54 VERBOSE  task          series-piratebay REJECTED: `True.Detective.S02E02.HDTV.x264-ASAP[ettv]` by torrent_alive plugin because had < 1 required seeds. (0)
+2016-08-17 22:54 VERBOSE  task          series-piratebay REJECTED: `True.Detective.S02E02.480p` by torrent_alive plugin because had < 1 required seeds. (0)
+2016-08-17 22:54 VERBOSE  task          series-piratebay REJECTED: `Game.of.Thrones.S05E01.480p.HDTV.x264-mSD` by torrent_alive plugin because had < 1 required seeds. (0)
+2016-08-17 22:54 VERBOSE  task          series-piratebay REJECTED: `Game Of Thrones S05E01 720p Dual audio PT-BR` by torrent_alive plugin because had < 1 required seeds. (0)
+2016-08-17 22:54 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 7 Undecided: 14 Failed: 0)
+2016-08-17 22:54 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 22:54 VERBOSE  discover      series-any      Discovering 7 titles ...
+2016-08-17 22:54 VERBOSE  discover      series-any      Searching for `Rick and Morty S03E01` with plugin `piratebay` (1 of 6)
+2016-08-17 22:54 VERBOSE  discover      series-any      No search results for `Rick and Morty S03E01`
+2016-08-17 22:54 VERBOSE  discover      series-any      Searching for `True Detective S02E02` with plugin `piratebay` (2 of 6)
+2016-08-17 22:54 VERBOSE  discover      series-any      Searching for `Doctor Who S10E01` with plugin `piratebay` (3 of 6)
+2016-08-17 22:55 VERBOSE  discover      series-any      No search results for `Doctor Who S10E01`
+2016-08-17 22:55 VERBOSE  discover      series-any      Searching for `Game of Thrones S05E01` with plugin `piratebay` (4 of 6)
+2016-08-17 22:55 VERBOSE  discover      series-any      Searching for `Sherlock S04E01` with plugin `piratebay` (5 of 6)
+2016-08-17 22:55 VERBOSE  discover      series-any      No search results for `Sherlock S04E01`
+2016-08-17 22:55 VERBOSE  discover      series-any      Searching for `House of Cards S05E01` with plugin `piratebay` (6 of 6)
+2016-08-17 22:55 VERBOSE  discover      series-any      No search results for `House of Cards S05E01`
+2016-08-17 22:55 VERBOSE  details       series-any      Produced 21 entries.
+2016-08-17 22:55 VERBOSE  task          series-any      REJECTED: `Game of thrones S05E01 GR SUBS 720p -YazooMix` by torrent_alive plugin because had < 1 required seeds. (0)
+2016-08-17 22:55 VERBOSE  task          series-any      REJECTED: `Game of Thrones S05E01 480p` by torrent_alive plugin because had < 1 required seeds. (0)
+2016-08-17 22:55 VERBOSE  task          series-any      REJECTED: `Game Of Thrones S05e01-10, [Mux - H264 - Ita Aac] COMPLETE SEASO` by torrent_alive plugin because had < 1 required seeds. (0)
+2016-08-17 22:55 VERBOSE  task          series-any      REJECTED: `True.Detective.S02E02.HDTV.x264-ASAP[ettv]` by torrent_alive plugin because had < 1 required seeds. (0)
+2016-08-17 22:55 VERBOSE  task          series-any      REJECTED: `True.Detective.S02E02.480p` by torrent_alive plugin because had < 1 required seeds. (0)
+2016-08-17 22:55 VERBOSE  task          series-any      REJECTED: `Game.of.Thrones.S05E01.480p.HDTV.x264-mSD` by torrent_alive plugin because had < 1 required seeds. (0)
+2016-08-17 22:55 VERBOSE  task          series-any      REJECTED: `Game Of Thrones S05E01 720p Dual audio PT-BR` by torrent_alive plugin because had < 1 required seeds. (0)
+2016-08-17 22:55 VERBOSE  details       series-any      Summary - Accepted: 0 (Rejected: 7 Undecided: 14 Failed: 0)
+2016-08-17 22:55 VERBOSE  list_add      series-any      adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:03 VERBOSE  task_queue                    There are 7 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:03 VERBOSE  input_cache   download-queue  Restored 1 entries from db cache
+2016-08-17 23:03 VERBOSE  details       download-queue  Produced 1 entries.
+2016-08-17 23:03 VERBOSE  task          download-queue  REJECTED: `The Girl on the Train (2016)` by seen plugin because entry with title `The Girl on the Train (2016)` is already marked seen in the task download-queue at 2016-07-31 18:38
+2016-08-17 23:03 VERBOSE  details       download-queue  Summary - Accepted: 0 (Rejected: 1 Undecided: 0 Failed: 0)
+2016-08-17 23:03 VERBOSE  list_add      download-queue  adding accepted entries into movie_list - trakt movies
+2016-08-17 23:03 VERBOSE  assume_quality movies-NO-YIFY-720p New assumption: any is 720p webrip h264 mp3
+2016-08-17 23:03 VERBOSE  discover      movies-NO-YIFY-720p Discovering 1 titles ...
+2016-08-17 23:03 VERBOSE  discover      movies-NO-YIFY-720p Discover interval of 5 hours not met for 1 entries. Use --discover-now to override.
+2016-08-17 23:03 VERBOSE  details       movies-NO-YIFY-720p Task didn't produce any entries.
+2016-08-17 23:03 VERBOSE  details       movies-NO-YIFY-720p Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:03 VERBOSE  list_remove   movies-NO-YIFY-720p removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:03 VERBOSE  list_add      movies-NO-YIFY-720p adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:03 VERBOSE  list_match    movies-NO-YIFY-720p removing accepted entries from movie_list - trakt movies
+2016-08-17 23:03 VERBOSE  assume_quality movies-720p     New assumption: any is 720p webrip h264 mp3
+2016-08-17 23:03 VERBOSE  discover      movies-720p     Discovering 1 titles ...
+2016-08-17 23:03 VERBOSE  discover      movies-720p     Discover interval of 5 hours not met for 1 entries. Use --discover-now to override.
+2016-08-17 23:03 VERBOSE  details       movies-720p     Task didn't produce any entries.
+2016-08-17 23:03 VERBOSE  details       movies-720p     Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:03 VERBOSE  list_remove   movies-720p     removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:03 VERBOSE  list_add      movies-720p     adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:03 VERBOSE  list_match    movies-720p     removing accepted entries from movie_list - trakt movies
+2016-08-17 23:03 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:03 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:03 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:03 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:03 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:03 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:03 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:03 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:03 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:03 VERBOSE  assume_quality movies-NO-YIFY-720pOrUp New assumption: any is 720p webrip h264 mp3
+2016-08-17 23:03 VERBOSE  discover      movies-NO-YIFY-720pOrUp Discovering 1 titles ...
+2016-08-17 23:03 VERBOSE  discover      movies-NO-YIFY-720pOrUp Discover interval of 5 hours not met for 1 entries. Use --discover-now to override.
+2016-08-17 23:03 VERBOSE  details       movies-NO-YIFY-720pOrUp Task didn't produce any entries.
+2016-08-17 23:03 VERBOSE  details       movies-NO-YIFY-720pOrUp Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:03 VERBOSE  list_remove   movies-NO-YIFY-720pOrUp removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:03 VERBOSE  list_add      movies-NO-YIFY-720pOrUp adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:03 VERBOSE  list_match    movies-NO-YIFY-720pOrUp removing accepted entries from movie_list - trakt movies
+2016-08-17 23:03 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:03 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:03 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:03 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:03 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:03 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:03 VERBOSE  details       series-showRSS  Summary - Accepted: 0 (Rejected: 4 Undecided: 0 Failed: 0)
+2016-08-17 23:03 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:03 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:03 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:03 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:03 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:03 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:03 ERROR    task_queue                    Got ctrl-c, shutting down after running task (if any) completes
+2016-08-17 23:03 VERBOSE  discover      series-any      Discovering 7 titles ...
+2016-08-17 23:03 VERBOSE  discover      series-any      Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:03 VERBOSE  details       series-any      Task didn't produce any entries.
+2016-08-17 23:03 VERBOSE  details       series-any      Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:03 VERBOSE  list_add      series-any      adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:04 VERBOSE  task_queue                    There are 8 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:04 VERBOSE  input_cache   download-queue  Restored 1 entries from db cache
+2016-08-17 23:04 VERBOSE  details       download-queue  Produced 1 entries.
+2016-08-17 23:04 VERBOSE  task          download-queue  REJECTED: `The Girl on the Train (2016)` by seen plugin because entry with title `The Girl on the Train (2016)` is already marked seen in the task download-queue at 2016-07-31 18:38
+2016-08-17 23:04 VERBOSE  details       download-queue  Summary - Accepted: 0 (Rejected: 1 Undecided: 0 Failed: 0)
+2016-08-17 23:04 VERBOSE  list_add      download-queue  adding accepted entries into movie_list - trakt movies
+2016-08-17 23:04 VERBOSE  assume_quality movies-NO-YIFY-720p New assumption: any is 720p webrip h264 mp3
+2016-08-17 23:04 VERBOSE  discover      movies-NO-YIFY-720p Discovering 1 titles ...
+2016-08-17 23:04 VERBOSE  discover      movies-NO-YIFY-720p Discover interval of 5 hours not met for 1 entries. Use --discover-now to override.
+2016-08-17 23:04 VERBOSE  details       movies-NO-YIFY-720p Task didn't produce any entries.
+2016-08-17 23:04 VERBOSE  details       movies-NO-YIFY-720p Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:04 VERBOSE  list_remove   movies-NO-YIFY-720p removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:04 VERBOSE  list_add      movies-NO-YIFY-720p adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:04 VERBOSE  list_match    movies-NO-YIFY-720p removing accepted entries from movie_list - trakt movies
+2016-08-17 23:04 VERBOSE  assume_quality movies-720p     New assumption: any is 720p webrip h264 mp3
+2016-08-17 23:04 VERBOSE  discover      movies-720p     Discovering 1 titles ...
+2016-08-17 23:04 VERBOSE  discover      movies-720p     Discover interval of 5 hours not met for 1 entries. Use --discover-now to override.
+2016-08-17 23:04 VERBOSE  details       movies-720p     Task didn't produce any entries.
+2016-08-17 23:04 VERBOSE  details       movies-720p     Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:04 VERBOSE  list_remove   movies-720p     removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:04 VERBOSE  list_add      movies-720p     adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:04 VERBOSE  list_match    movies-720p     removing accepted entries from movie_list - trakt movies
+2016-08-17 23:04 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:04 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:04 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:04 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:04 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:04 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:04 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:04 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:04 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:04 VERBOSE  assume_quality movies-NO-YIFY-720pOrUp New assumption: any is 720p webrip h264 mp3
+2016-08-17 23:04 VERBOSE  discover      movies-NO-YIFY-720pOrUp Discovering 1 titles ...
+2016-08-17 23:04 VERBOSE  discover      movies-NO-YIFY-720pOrUp Discover interval of 5 hours not met for 1 entries. Use --discover-now to override.
+2016-08-17 23:04 VERBOSE  details       movies-NO-YIFY-720pOrUp Task didn't produce any entries.
+2016-08-17 23:04 VERBOSE  details       movies-NO-YIFY-720pOrUp Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:04 VERBOSE  list_remove   movies-NO-YIFY-720pOrUp removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:04 VERBOSE  list_add      movies-NO-YIFY-720pOrUp adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:04 VERBOSE  list_match    movies-NO-YIFY-720pOrUp removing accepted entries from movie_list - trakt movies
+2016-08-17 23:04 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:04 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:04 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:04 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:04 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:04 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:04 VERBOSE  details       series-showRSS  Summary - Accepted: 0 (Rejected: 4 Undecided: 0 Failed: 0)
+2016-08-17 23:04 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:04 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:04 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:04 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:04 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:04 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:04 VERBOSE  discover      series-any      Discovering 7 titles ...
+2016-08-17 23:04 VERBOSE  discover      series-any      Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:04 VERBOSE  details       series-any      Task didn't produce any entries.
+2016-08-17 23:04 VERBOSE  details       series-any      Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:04 VERBOSE  list_add      series-any      adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:07 VERBOSE  task_queue                    There are 7 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:07 VERBOSE  input_cache   download-queue  Restored 1 entries from db cache
+2016-08-17 23:07 VERBOSE  details       download-queue  Produced 1 entries.
+2016-08-17 23:07 VERBOSE  task          download-queue  REJECTED: `The Girl on the Train (2016)` by seen plugin because entry with title `The Girl on the Train (2016)` is already marked seen in the task download-queue at 2016-07-31 18:38
+2016-08-17 23:07 VERBOSE  details       download-queue  Summary - Accepted: 0 (Rejected: 1 Undecided: 0 Failed: 0)
+2016-08-17 23:07 VERBOSE  list_add      download-queue  adding accepted entries into movie_list - trakt movies
+2016-08-17 23:07 VERBOSE  assume_quality movies-NO-YIFY-720p New assumption: any is 720p webrip h264 mp3
+2016-08-17 23:07 VERBOSE  discover      movies-NO-YIFY-720p Discovering 1 titles ...
+2016-08-17 23:07 VERBOSE  discover      movies-NO-YIFY-720p Discover interval of 5 hours not met for 1 entries. Use --discover-now to override.
+2016-08-17 23:07 VERBOSE  details       movies-NO-YIFY-720p Task didn't produce any entries.
+2016-08-17 23:07 VERBOSE  details       movies-NO-YIFY-720p Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:07 VERBOSE  list_remove   movies-NO-YIFY-720p removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:07 VERBOSE  list_add      movies-NO-YIFY-720p adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:07 VERBOSE  list_match    movies-NO-YIFY-720p removing accepted entries from movie_list - trakt movies
+2016-08-17 23:07 VERBOSE  assume_quality movies-720p     New assumption: any is 720p webrip h264 mp3
+2016-08-17 23:07 VERBOSE  discover      movies-720p     Discovering 1 titles ...
+2016-08-17 23:07 VERBOSE  discover      movies-720p     Discover interval of 5 hours not met for 1 entries. Use --discover-now to override.
+2016-08-17 23:07 VERBOSE  details       movies-720p     Task didn't produce any entries.
+2016-08-17 23:07 VERBOSE  details       movies-720p     Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:07 VERBOSE  list_remove   movies-720p     removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:07 VERBOSE  list_add      movies-720p     adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:07 VERBOSE  list_match    movies-720p     removing accepted entries from movie_list - trakt movies
+2016-08-17 23:07 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:07 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:07 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:07 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:07 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:07 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:07 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:07 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:07 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:07 VERBOSE  assume_quality movies-NO-YIFY-720pOrUp New assumption: any is 720p webrip h264 mp3
+2016-08-17 23:07 VERBOSE  discover      movies-NO-YIFY-720pOrUp Discovering 1 titles ...
+2016-08-17 23:07 VERBOSE  discover      movies-NO-YIFY-720pOrUp Discover interval of 5 hours not met for 1 entries. Use --discover-now to override.
+2016-08-17 23:07 VERBOSE  details       movies-NO-YIFY-720pOrUp Task didn't produce any entries.
+2016-08-17 23:07 VERBOSE  details       movies-NO-YIFY-720pOrUp Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:07 VERBOSE  list_remove   movies-NO-YIFY-720pOrUp removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:07 VERBOSE  list_add      movies-NO-YIFY-720pOrUp adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:07 VERBOSE  list_match    movies-NO-YIFY-720pOrUp removing accepted entries from movie_list - trakt movies
+2016-08-17 23:07 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:07 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:07 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:07 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:07 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:07 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 23:07 VERBOSE  details       series-showRSS  Summary - Accepted: 1 (Rejected: 3 Undecided: 0 Failed: 0)
+2016-08-17 23:07 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:07 ERROR    exec          series-showRSS  Could not set exec command for Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes: (UndefinedError) 'series_name' is undefined
+2016-08-17 23:07 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:07 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:07 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:07 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:07 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:07 VERBOSE  discover      series-any      Discovering 7 titles ...
+2016-08-17 23:07 VERBOSE  discover      series-any      Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:07 VERBOSE  details       series-any      Task didn't produce any entries.
+2016-08-17 23:07 VERBOSE  details       series-any      Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:07 VERBOSE  list_add      series-any      adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:11 VERBOSE  task_queue                    There are 7 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:11 VERBOSE  input_cache   download-queue  Restored 1 entries from db cache
+2016-08-17 23:11 VERBOSE  details       download-queue  Produced 1 entries.
+2016-08-17 23:11 VERBOSE  task          download-queue  REJECTED: `The Girl on the Train (2016)` by seen plugin because entry with title `The Girl on the Train (2016)` is already marked seen in the task download-queue at 2016-07-31 18:38
+2016-08-17 23:11 VERBOSE  details       download-queue  Summary - Accepted: 0 (Rejected: 1 Undecided: 0 Failed: 0)
+2016-08-17 23:11 VERBOSE  list_add      download-queue  adding accepted entries into movie_list - trakt movies
+2016-08-17 23:11 VERBOSE  assume_quality movies-NO-YIFY-720p New assumption: any is 720p webrip h264 mp3
+2016-08-17 23:11 VERBOSE  discover      movies-NO-YIFY-720p Discovering 1 titles ...
+2016-08-17 23:11 VERBOSE  discover      movies-NO-YIFY-720p Discover interval of 5 hours not met for 1 entries. Use --discover-now to override.
+2016-08-17 23:11 VERBOSE  details       movies-NO-YIFY-720p Task didn't produce any entries.
+2016-08-17 23:11 VERBOSE  details       movies-NO-YIFY-720p Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:11 VERBOSE  list_remove   movies-NO-YIFY-720p removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:11 VERBOSE  list_add      movies-NO-YIFY-720p adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:11 VERBOSE  list_match    movies-NO-YIFY-720p removing accepted entries from movie_list - trakt movies
+2016-08-17 23:11 VERBOSE  assume_quality movies-720p     New assumption: any is 720p webrip h264 mp3
+2016-08-17 23:11 VERBOSE  discover      movies-720p     Discovering 1 titles ...
+2016-08-17 23:11 VERBOSE  discover      movies-720p     Discover interval of 5 hours not met for 1 entries. Use --discover-now to override.
+2016-08-17 23:11 VERBOSE  details       movies-720p     Task didn't produce any entries.
+2016-08-17 23:11 VERBOSE  details       movies-720p     Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:11 VERBOSE  list_remove   movies-720p     removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:11 VERBOSE  list_add      movies-720p     adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:11 VERBOSE  list_match    movies-720p     removing accepted entries from movie_list - trakt movies
+2016-08-17 23:11 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:11 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:11 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:11 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:11 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:11 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:11 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:11 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:11 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:11 VERBOSE  assume_quality movies-NO-YIFY-720pOrUp New assumption: any is 720p webrip h264 mp3
+2016-08-17 23:11 VERBOSE  discover      movies-NO-YIFY-720pOrUp Discovering 1 titles ...
+2016-08-17 23:11 VERBOSE  discover      movies-NO-YIFY-720pOrUp Discover interval of 5 hours not met for 1 entries. Use --discover-now to override.
+2016-08-17 23:11 VERBOSE  details       movies-NO-YIFY-720pOrUp Task didn't produce any entries.
+2016-08-17 23:11 VERBOSE  details       movies-NO-YIFY-720pOrUp Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:11 VERBOSE  list_remove   movies-NO-YIFY-720pOrUp removing accepted entries from trakt_list - {u'username': u'tuxitop', u'list': u'watchlist', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:11 VERBOSE  list_add      movies-NO-YIFY-720pOrUp adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:11 VERBOSE  list_match    movies-NO-YIFY-720pOrUp removing accepted entries from movie_list - trakt movies
+2016-08-17 23:11 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:11 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:11 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:11 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:11 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:11 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 23:11 VERBOSE  details       series-showRSS  Summary - Accepted: 1 (Rejected: 3 Undecided: 0 Failed: 0)
+2016-08-17 23:11 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:11 ERROR    exec          series-showRSS  Could not set exec command for Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes: (UndefinedError) 'series_name' is undefined
+2016-08-17 23:11 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:11 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:11 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:11 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:11 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:11 VERBOSE  discover      series-any      Discovering 7 titles ...
+2016-08-17 23:11 VERBOSE  discover      series-any      Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:11 VERBOSE  details       series-any      Task didn't produce any entries.
+2016-08-17 23:11 VERBOSE  details       series-any      Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:11 VERBOSE  list_add      series-any      adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:13 CRITICAL manager                       [/] `tasks` is a required property
+2016-08-17 23:13 CRITICAL manager                       Failed to load config file: Did not pass schema validation.
+2016-08-17 23:13 CRITICAL manager                       [/] `tasks` is a required property
+2016-08-17 23:13 CRITICAL manager                       Failed to load config file: Did not pass schema validation.
+2016-08-17 23:13 CRITICAL manager                       [/] `tasks` is a required property
+2016-08-17 23:13 CRITICAL manager                       Failed to load config file: Did not pass schema validation.
+2016-08-17 23:14 VERBOSE  task_queue                    There are 4 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:14 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:14 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:14 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:14 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:14 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:14 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:14 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:14 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:14 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:14 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:14 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:14 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:14 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:14 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:14 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 23:14 VERBOSE  details       series-showRSS  Summary - Accepted: 1 (Rejected: 3 Undecided: 0 Failed: 0)
+2016-08-17 23:14 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:14 ERROR    exec          series-showRSS  Could not set exec command for Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes: (UndefinedError) 'series_name' is undefined
+2016-08-17 23:14 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:14 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:14 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:14 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:14 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:14 ERROR    task_queue                    Got ctrl-c, shutting down after running task (if any) completes
+2016-08-17 23:14 VERBOSE  discover      series-any      Discovering 7 titles ...
+2016-08-17 23:14 VERBOSE  discover      series-any      Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:14 VERBOSE  details       series-any      Task didn't produce any entries.
+2016-08-17 23:14 VERBOSE  details       series-any      Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:14 VERBOSE  list_add      series-any      adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:16 VERBOSE  task_queue                    There are 4 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:16 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:16 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:16 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:16 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:16 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:16 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:16 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:16 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:16 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:16 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:17 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:17 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:17 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:17 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:17 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 23:17 VERBOSE  details       series-showRSS  Summary - Accepted: 1 (Rejected: 3 Undecided: 0 Failed: 0)
+2016-08-17 23:17 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:17 ERROR    exec          series-showRSS  Could not set exec command for Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes: (UndefinedError) 'series_name' is undefined
+2016-08-17 23:17 ERROR    task_queue                    Got ctrl-c, shutting down after running task (if any) completes
+2016-08-17 23:17 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:17 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:17 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:17 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:17 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:17 WARNING  task_queue                    task queue shut down with 1 tasks remaining in the queue to run.
+2016-08-17 23:20 VERBOSE  task_queue                    There are 4 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:20 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:20 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:20 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:20 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:20 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:20 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:20 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:20 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:20 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:20 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:20 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:20 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:20 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:20 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:20 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 23:20 VERBOSE  details       series-showRSS  Summary - Accepted: 1 (Rejected: 3 Undecided: 0 Failed: 0)
+2016-08-17 23:20 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:20 ERROR    exec          series-showRSS  Could not set exec command for Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes: (UndefinedError) 'series_name' is undefined
+2016-08-17 23:20 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:20 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:20 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:20 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:20 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:20 ERROR    task_queue                    Got ctrl-c, shutting down after running task (if any) completes
+2016-08-17 23:20 VERBOSE  discover      series-any      Discovering 7 titles ...
+2016-08-17 23:20 VERBOSE  discover      series-any      Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:20 VERBOSE  details       series-any      Task didn't produce any entries.
+2016-08-17 23:20 VERBOSE  details       series-any      Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:20 VERBOSE  list_add      series-any      adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:25 VERBOSE  task_queue                    There are 3 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:25 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:25 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:25 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:25 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:25 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:25 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:25 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:25 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:25 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:25 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:25 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:25 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` is already marked seen in the task series-showRSS at 2016-08-17 23:20
+2016-08-17 23:25 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:25 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:25 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:25 VERBOSE  details       series-showRSS  Summary - Accepted: 0 (Rejected: 4 Undecided: 0 Failed: 0)
+2016-08-17 23:25 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:26 ERROR    task_queue                    Got ctrl-c, shutting down after running task (if any) completes
+2016-08-17 23:26 VERBOSE  task_queue                    There are 4 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:26 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:26 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:26 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:26 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:26 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:26 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:26 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:26 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:26 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:26 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:26 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:26 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:26 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:26 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:26 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 23:26 VERBOSE  details       series-showRSS  Summary - Accepted: 1 (Rejected: 3 Undecided: 0 Failed: 0)
+2016-08-17 23:26 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:26 ERROR    exec          series-showRSS  Could not set exec command for Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes: (UndefinedError) 'series_name' is undefined
+2016-08-17 23:26 ERROR    task_queue                    Got ctrl-c, shutting down after running task (if any) completes
+2016-08-17 23:26 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:26 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:26 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:26 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:26 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:26 WARNING  task_queue                    task queue shut down with 1 tasks remaining in the queue to run.
+2016-08-17 23:27 VERBOSE  task_queue                    There are 3 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:27 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:27 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:27 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:27 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:27 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:27 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:27 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:27 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:27 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:27 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:27 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:27 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` is already marked seen in the task series-showRSS at 2016-08-17 23:26
+2016-08-17 23:27 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:27 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:27 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:27 VERBOSE  details       series-showRSS  Summary - Accepted: 0 (Rejected: 4 Undecided: 0 Failed: 0)
+2016-08-17 23:27 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:27 ERROR    task_queue                    Got ctrl-c, shutting down after running task (if any) completes
+2016-08-17 23:27 VERBOSE  task_queue                    There are 4 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:28 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:28 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:28 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:28 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:28 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:28 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:28 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:28 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:28 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:28 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:28 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:28 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:28 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:28 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:28 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 23:28 VERBOSE  details       series-showRSS  Summary - Accepted: 1 (Rejected: 3 Undecided: 0 Failed: 0)
+2016-08-17 23:28 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:28 ERROR    exec          series-showRSS  Could not set exec command for Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes: (UndefinedError) 'series_name' is undefined
+2016-08-17 23:28 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:28 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:28 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:28 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:28 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:28 ERROR    task_queue                    Got ctrl-c, shutting down after running task (if any) completes
+2016-08-17 23:28 VERBOSE  discover      series-any      Discovering 7 titles ...
+2016-08-17 23:28 VERBOSE  discover      series-any      Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:28 VERBOSE  details       series-any      Task didn't produce any entries.
+2016-08-17 23:28 VERBOSE  details       series-any      Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:28 VERBOSE  list_add      series-any      adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:29 VERBOSE  task_queue                    There are 3 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:29 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:29 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:29 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:29 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:29 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:29 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:29 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:29 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:29 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:29 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:29 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:29 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:29 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:29 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:29 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 23:29 VERBOSE  details       series-showRSS  Summary - Accepted: 1 (Rejected: 3 Undecided: 0 Failed: 0)
+2016-08-17 23:29 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:29 ERROR    exec          series-showRSS  Could not set exec command for Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes: (UndefinedError) 'series_name' is undefined
+2016-08-17 23:29 ERROR    task_queue                    Got ctrl-c, shutting down after running task (if any) completes
+2016-08-17 23:30 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:30 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:30 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:30 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:30 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:30 WARNING  task_queue                    task queue shut down with 1 tasks remaining in the queue to run.
+2016-08-17 23:31 VERBOSE  task_queue                    There are 3 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:31 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:31 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:31 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:31 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:31 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:31 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:31 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:31 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:31 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:31 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:31 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:31 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:31 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:31 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:31 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 23:31 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by require_field plugin because required field series_name is not present
+2016-08-17 23:31 VERBOSE  details       series-showRSS  Summary - Accepted: 0 (Rejected: 4 Undecided: 0 Failed: 0)
+2016-08-17 23:31 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:31 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:31 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:31 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:31 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:31 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:31 VERBOSE  discover      series-any      Discovering 7 titles ...
+2016-08-17 23:31 VERBOSE  discover      series-any      Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:31 VERBOSE  details       series-any      Task didn't produce any entries.
+2016-08-17 23:31 VERBOSE  details       series-any      Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:31 VERBOSE  list_add      series-any      adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:33 VERBOSE  task_queue                    There are 3 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:33 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:33 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:33 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:33 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:33 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:33 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:33 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:33 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:33 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:33 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:33 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:33 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:33 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:33 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:33 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 23:33 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by require_field plugin because required field series_name is not present
+2016-08-17 23:33 VERBOSE  details       series-showRSS  Summary - Accepted: 0 (Rejected: 4 Undecided: 0 Failed: 0)
+2016-08-17 23:33 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:33 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:33 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:33 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:33 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:33 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:33 ERROR    task_queue                    Got ctrl-c, shutting down after running task (if any) completes
+2016-08-17 23:33 VERBOSE  discover      series-any      Discovering 7 titles ...
+2016-08-17 23:33 VERBOSE  discover      series-any      Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:33 VERBOSE  details       series-any      Task didn't produce any entries.
+2016-08-17 23:33 VERBOSE  details       series-any      Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:33 VERBOSE  list_add      series-any      adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:35 VERBOSE  task_queue                    There are 3 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:35 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:35 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:35 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:35 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:35 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:35 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:35 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:35 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:35 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:35 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:35 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:35 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:35 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:35 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:35 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 23:35 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by require_field plugin because required field series_name is not present
+2016-08-17 23:35 VERBOSE  details       series-showRSS  Summary - Accepted: 0 (Rejected: 4 Undecided: 0 Failed: 0)
+2016-08-17 23:35 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:35 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:35 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:35 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:35 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:35 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:35 VERBOSE  discover      series-any      Discovering 7 titles ...
+2016-08-17 23:35 VERBOSE  discover      series-any      Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:35 VERBOSE  details       series-any      Task didn't produce any entries.
+2016-08-17 23:35 VERBOSE  details       series-any      Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:35 VERBOSE  list_add      series-any      adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:39 VERBOSE  task_queue                    There are 4 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:39 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:39 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:39 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:39 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:39 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:39 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:39 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:39 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:39 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:39 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:39 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:39 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:39 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:39 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:39 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 23:39 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by require_field plugin because required field series_name is not present
+2016-08-17 23:39 VERBOSE  details       series-showRSS  Summary - Accepted: 0 (Rejected: 4 Undecided: 0 Failed: 0)
+2016-08-17 23:39 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:39 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:39 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:39 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:39 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:39 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:39 VERBOSE  discover      series-any      Discovering 7 titles ...
+2016-08-17 23:39 VERBOSE  discover      series-any      Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:39 VERBOSE  details       series-any      Task didn't produce any entries.
+2016-08-17 23:39 VERBOSE  details       series-any      Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:39 VERBOSE  list_add      series-any      adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:43 VERBOSE  task_queue                    There are 3 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:43 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:43 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:43 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:43 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:43 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:43 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:43 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:43 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:43 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:43 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:43 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:43 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:43 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:43 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:43 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 23:43 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by require_field plugin because required field series_name is not present
+2016-08-17 23:43 VERBOSE  details       series-showRSS  Summary - Accepted: 0 (Rejected: 4 Undecided: 0 Failed: 0)
+2016-08-17 23:43 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:43 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:43 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:43 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:43 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:43 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:43 VERBOSE  discover      series-any      Discovering 7 titles ...
+2016-08-17 23:43 VERBOSE  discover      series-any      Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:43 VERBOSE  details       series-any      Task didn't produce any entries.
+2016-08-17 23:43 VERBOSE  details       series-any      Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:43 VERBOSE  list_add      series-any      adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:44 VERBOSE  task_queue                    There are 4 tasks to execute. Shutdown will commence when they have completed.
+2016-08-17 23:44 VERBOSE  details       sync-trakt      Produced 7 entries.
+2016-08-17 23:44 VERBOSE  task          sync-trakt      REJECTED: `Black Mirror (2011) S03E01` by seen plugin because entry with title `Black Mirror (2011) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:44 VERBOSE  task          sync-trakt      REJECTED: `Rick and Morty (2013) S03E01` by seen plugin because entry with title `Rick and Morty (2013) S03E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:44 VERBOSE  task          sync-trakt      REJECTED: `True Detective (2014) S02E02` by seen plugin because entry with title `True Detective (2014) S02E02` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:44 VERBOSE  task          sync-trakt      REJECTED: `Doctor Who (2005) S10E01` by seen plugin because entry with title `Doctor Who (2005) S10E01` is already marked seen in the task sync-trakt at 2016-07-31 04:41
+2016-08-17 23:44 VERBOSE  task          sync-trakt      REJECTED: `Game of Thrones (2011) S05E01` by seen plugin because entry with title `Game of Thrones (2011) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:44 VERBOSE  task          sync-trakt      REJECTED: `Sherlock (2010) S04E01` by seen plugin because entry with title `Sherlock (2010) S04E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:44 VERBOSE  task          sync-trakt      REJECTED: `House of Cards (2013) S05E01` by seen plugin because entry with title `House of Cards (2013) S05E01` is already marked seen in the task sync-trakt at 2016-08-01 01:39
+2016-08-17 23:44 VERBOSE  details       sync-trakt      Summary - Accepted: 0 (Rejected: 7 Undecided: 0 Failed: 0)
+2016-08-17 23:44 VERBOSE  input_cache   series-showRSS  Restored 7 entries from db cache
+2016-08-17 23:45 VERBOSE  details       series-showRSS  Produced 4 entries.
+2016-08-17 23:45 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` by seen plugin because entry with title `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes PROPER` is already marked seen in the task series-showRSS at 2016-08-17 22:52
+2016-08-17 23:45 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` by seen plugin because entry with title `Mr. Robot 2x05 eps2.3_logic-b0mb.hc` is already marked seen in the task series-showRSS at 2016-08-05 00:03
+2016-08-17 23:45 VERBOSE  task          series-showRSS  REJECTED: `Mr. Robot 2x04 eps2.2_init1.asec` by seen plugin because entry with title `Mr. Robot 2x04 eps2.2_init1.asec` is already marked seen in the task showRSS at 2016-07-28 23:20
+2016-08-17 23:45 VERBOSE  task          series-showRSS  ACCEPTED: `Mr. Robot 2x06 eps2.4_m4ster-s1ave.aes` by accept_all plugin
+2016-08-17 23:45 VERBOSE  details       series-showRSS  Summary - Accepted: 1 (Rejected: 3 Undecided: 0 Failed: 0)
+2016-08-17 23:45 VERBOSE  list_add      series-showRSS  adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:45 VERBOSE  exec          series-showRSS  Executing: ruby /usr/share/doc/aria2/xmlrpc/aria2rpc addUri "magnet:?xt=urn:btih:DF47A8E8824693E522CEA5411CCF62F7913797C7&dn=Mr+Robot+S02E06+HDTV+x264+FLEET&tr=udp://tracker.coppersurfer.tk:6969/announce&tr=udp://tracker.leechers-paradise.org:6969&tr=udp://open.demonii.com:1337" --dir="/home/ali/Downloads/aria2/flexget/Series/" --pause="true"
+2016-08-17 23:45 INFO     exec          series-showRSS  Stdout: "4d16618561787422"\n
+2016-08-17 23:45 VERBOSE  discover      series-piratebay Discovering 7 titles ...
+2016-08-17 23:45 VERBOSE  discover      series-piratebay Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:45 VERBOSE  details       series-piratebay Task didn't produce any entries.
+2016-08-17 23:45 VERBOSE  details       series-piratebay Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:45 VERBOSE  list_add      series-piratebay adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:45 VERBOSE  discover      series-any      Discovering 7 titles ...
+2016-08-17 23:45 VERBOSE  discover      series-any      Discover interval of 5 hours not met for 7 entries. Use --discover-now to override.
+2016-08-17 23:45 VERBOSE  details       series-any      Task didn't produce any entries.
+2016-08-17 23:45 VERBOSE  details       series-any      Summary - Accepted: 0 (Rejected: 0 Undecided: 0 Failed: 0)
+2016-08-17 23:45 VERBOSE  list_add      series-any      adding accepted entries into trakt_list - {u'username': u'tuxitop', u'list': u'collection', u'account': u'tuxitop', u'type': u'auto', u'strip_dates': False}
+2016-08-17 23:50 INFO     scheduler                     No schedules defined in config. Defaulting to run all tasks on a 1 hour interval.
+2016-08-17 23:50 INFO     scheduler                     Starting scheduler
+2016-08-17 23:50 INFO     webui                         Not starting webui as it's disabled or not set in the config
+2016-08-17 23:50 INFO     manager       sync-trakt      Running database cleanup.
+2016-08-17 23:50 INFO     db_analyze    sync-trakt      Running ANALYZE on database to improve performance.
+2016-08-17 23:50 INFO     scheduler     sync-trakt      No schedules defined in config. Defaulting to run all tasks on a 1 hour interval.
+2016-08-18 06:40 WARNING  discover      series-any      Error during input plugin next_trakt_episodes: Unable to get trakt list `watchlist`: EOF occurred in violation of protocol (_ssl.c:590)
+2016-08-18 07:39 CRITICAL plugin        sync-trakt      Unable to get trakt list `watchlist`: EOF occurred in violation of protocol (_ssl.c:590)
+2016-08-18 07:39 WARNING  task          sync-trakt      Aborting task (plugin: next_trakt_episodes)
+2016-08-18 07:40 CRITICAL plugin        series-showRSS  Unable to download the RSS for task series-showRSS (https://showrss.info/user/81827.rss?magnets=true&namespaces=true&name=clean&quality=null&re=null): HTTPSConnectionPool(host='showrss.info', port=443): Read timed out. (read timeout=60)
+2016-08-18 07:40 WARNING  task          series-showRSS  Aborting task (plugin: rss)
+2016-08-18 07:41 WARNING  discover      series-piratebay Error during input plugin next_trakt_episodes: Unable to get trakt list `watchlist`: HTTPSConnectionPool(host='api-v2launch.trakt.tv', port=443): Read timed out. (read timeout=30)
+2016-08-18 07:41 WARNING  discover      series-any      Error during input plugin next_trakt_episodes: Unable to get trakt list `watchlist`: Requests to this site (api-v2launch.trakt.tv) have timed out recently. Waiting before trying again.
+2016-08-18 08:40 WARNING  discover      series-any      Error during input plugin next_trakt_episodes: Unable to get trakt list `watchlist`: EOF occurred in violation of protocol (_ssl.c:590)
+2016-08-18 09:39 CRITICAL plugin        sync-trakt      An error has occurred looking up: Trakt_id: 1390 Error: ('Connection aborted.', error(104, 'Connection reset by peer'))
+2016-08-18 09:39 WARNING  task          sync-trakt      Aborting task (plugin: next_trakt_episodes)
+2016-08-18 09:40 ERROR    input_cache   series-showRSS  There was an error during trakt_list input (Could not retrieve list from trakt (('Connection aborted.', BadStatusLine("''",)))), using cache instead.
+2016-08-18 09:40 CRITICAL plugin        series-showRSS  Unable to download the RSS for task series-showRSS (https://showrss.info/user/81827.rss?magnets=true&namespaces=true&name=clean&quality=null&re=null): ('Connection aborted.', error(104, 'Connection reset by peer'))
+2016-08-18 09:40 WARNING  task          series-showRSS  Aborting task (plugin: rss)
+2016-08-18 09:41 WARNING  discover      series-piratebay Error during input plugin next_trakt_episodes: Unable to get trakt list `watchlist`: HTTPSConnectionPool(host='api-v2launch.trakt.tv', port=443): Read timed out. (read timeout=30)
+2016-08-18 09:41 WARNING  discover      series-any      Error during input plugin next_trakt_episodes: Unable to get trakt list `watchlist`: Requests to this site (api-v2launch.trakt.tv) have timed out recently. Waiting before trying again.
+2016-08-18 10:39 INFO     exec          series-showRSS  Stdout: "2f253d5a7a1b0ed8"\n
