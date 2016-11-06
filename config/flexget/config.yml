@@ -43,6 +43,7 @@ templates:
                     list: watchlist
                     type: shows
     trakt-shows-any:
+        next_series_episodes: yes
         configure_series:
             settings:
                 quality: webdl|hdtv

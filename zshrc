@@ -55,7 +55,7 @@ export PATH=$PATH:$HOME/bin         # add directory for personal scripts
 export EDITOR=vim                   # Define default editor
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on' # Better fonts in java apps
 export QT_STYLE_OVERRIDE='GTK+'     # QT5 Style
-export PATH=$PATH:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/opt/android-sdk/build-tools               # Add android sdk to path
+export PATH=$PATH:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/opt/android-sdk/build-tools:/home/ali/.gem/ruby/2.3.0/bin   # Add android sdk to path
 #export LC_TIME="en_US.utf8" # Gnome shows dates in persian. this should fix it.
 
 ## GRML Specific Variables:

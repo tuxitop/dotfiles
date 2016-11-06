@@ -21,9 +21,9 @@
         create: false
         relink: false
         force: false
-    ~/.vim/vimrc:
-        path: vim/vimrc
-        create: true
+    ~/.vimrc:
+        path: vimrc
+        create: false
         relink: false
         force: false
     ~/.zshrc:

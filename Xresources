@@ -5,7 +5,7 @@ rofi.color-normal:      argb:00111111, #E5DBCF, argb:00111111, #CC9752, #0F3B5F
 rofi.color-urgent:      argb:00111111, #af652f, argb:00111111, #af652f, #0F3B5F
 rofi.color-active:      argb:00111111, #70a16c, argb:00111111, #70a16c, #0F3B5F
 rofi.separator-style:   dash
-rofi.modi:              window,run
+rofi.modi:              window,run,drun
 rofi.fullscreen:        false
 rofi.padding:           2
 rofi.hide-scrollbar:    true

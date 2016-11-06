@@ -189,7 +189,7 @@ new_window 1pixel
 ### Assignments
 assign [class="Firefox"] 2:www
 assign [class="google-chrome"] 2:www
-assign [class="telegram-desktop"] 3:im
+assign [class="TelegramDesktop"] 3:im
 assign [class="Hexchat"] 3:im
 
 ### Floating apps
