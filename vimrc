@@ -70,6 +70,9 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 set wildmenu
 set wildmode=full
 
+" set swap files directory to avoid polluting other directories
+set directory=~/.vim/swapfiles//
+
 " hide unnecessary gui in gVim
 set guioptions-=m  " remove menu bar
 set guioptions-=T  " remove toolbar
@@ -84,14 +87,14 @@ call plug#begin('~/.vim/plugged')
 
 " plugin definitions
 Plug 'tpope/vim-commentary'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
 Plug 'scrooloose/syntastic'
 Plug 'mattn/emmet-vim'
 Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'MarcWeber/vim-addon-mw-utils'    " required for snipmate
 Plug 'tomtom/tlib_vim'                 " required for snipmate
 Plug 'garbas/vim-snipmate'
@@ -105,6 +108,11 @@ Plug 'wakatime/vim-wakatime'
 Plug 'Chiel92/vim-autoformat'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'pangloss/vim-javascript'
+Plug 'moll/vim-node'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'digitaltoad/vim-pug'
+Plug 'dNitro/vim-pug-complete', { 'for': ['jade', 'pug'] }
 " Add plugins to &runtimepath
 call plug#end()
 
@@ -139,6 +147,7 @@ let g:syntastic_check_on_wq = 0
 " file types
 let g:syntastic_python_checkers = ['flake9']
 let g:syntastic_css_checkers = ['csslint']
+let g:syntastic_pug_checkers = ['pug_lint']
 
 " zencoding with ctrl-e
 let g:user_emmet_leader_key = '<c-e>'
@@ -149,3 +158,12 @@ smap <C-\> <Plug>snipMateNextOrTrigger
 
 " Enables syntax highlighting for JSDocs (requires vim-javascript)
 let g:javascript_plugin_jsdoc = 1
+
+" indent guides (toggle with <leader>ig)
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
+" Temporary fix for emmet pug completion until the issue is fixed
+" see: https://github.com/mattn/emmet-vim/issues/358
+autocmd BufRead,BufNewFile *.pug set filetype=jade
+autocmd Filetype jade set syntax=pug

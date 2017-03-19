@@ -188,7 +188,7 @@ new_window 1pixel
 
 ### Assignments
 assign [class="Firefox"] 2:www
-assign [class="google-chrome"] 2:www
+assign [class="Google-chrome"] 2:www
 assign [class="TelegramDesktop"] 3:im
 assign [class="Hexchat"] 3:im
 

@@ -33,8 +33,8 @@ fi;
 SSID=$(iwgetid -r)
 HOME_NET="theTerminal"
 if [[ $SSID = $HOME_NET ]]; then
-    if ! (echo $PS | grep -q firefox-developer ); then
-        firefox-developer 2>/dev/null 1>&2 &
+    if ! (echo $PS | grep -q google-chrome-stable ); then
+        google-chrome-stable 2>/dev/null 1>&2 &
     fi;
     if ! (echo $PS | grep -q hexchat); then
         hexchat 2>/dev/null 1>&2 &

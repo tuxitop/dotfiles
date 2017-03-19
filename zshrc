@@ -76,6 +76,10 @@ prompt grml-large
 source /usr/share/doc/pkgfile/command-not-found.zsh
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+
+# Autojump requires(autojump)
+source /etc/profile.d/autojump.zsh
+
 #----------------------------------------------------------------------
 #  FUNCTIONS
 #----------------------------------------------------------------------
