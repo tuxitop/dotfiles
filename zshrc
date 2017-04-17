@@ -2,13 +2,15 @@
 # Customizations to zshell. based on grml-zsh-config
 #
 # Author: Ali Mousavi
-# Last Updated: 2014/08/20
+# Last Updated: 2017/04/17
 #
 # Requirements:
 # zsh
 # grml-zsh-config
 # htop
 # pkgfile (for command not found hook in Arch Linux)
+# autojump
+# jdate (for jalali date in prompt)
 
 #----------------------------------------------------------------------
 #  CUSTOM ALIASES
@@ -46,7 +48,6 @@ alias chown='chown --preserve-root' # Don't operate recursively on "/"
 alias chmod='chmod --preserve-root' # Don't operate recursively on "/"
 alias chgrp='chgrp --preserve-root' # Don't operate recursively on "/"
 
-
 #----------------------------------------------------------------------
 #  ENVIRONMENT VARAIBLES
 #----------------------------------------------------------------------
@@ -58,16 +59,26 @@ export QT_STYLE_OVERRIDE='GTK+'     # QT5 Style
 export PATH=$PATH:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/opt/android-sdk/build-tools:/home/ali/.gem/ruby/2.3.0/bin   # Add android sdk to path
 #export LC_TIME="en_US.utf8" # Gnome shows dates in persian. this should fix it.
 
-## GRML Specific Variables:
-#export COMMAND_NOT_FOUND=1
-#export GRML_ZSH_CNF_HANDLER="/usr/share/doc/pkgfile/command-not-found.zsh"
-
 #----------------------------------------------------------------------
 #   PROMPT
 #----------------------------------------------------------------------
 
 # set the prompt theme
-prompt grml-large
+prompt grml
+
+#Virtualenv support
+function virtual_env_prompt () {
+    REPLY=${VIRTUAL_ENV+ (${VIRTUAL_ENV:t}) }
+}
+grml_theme_add_token  virtual-env -f virtual_env_prompt '%B%F{red}' '%f'
+
+#Jalali date support
+function jalali_date_prompt {
+    REPLY=" ($(jdate "+%F"))"
+}
+grml_theme_add_token  jdate -f jalali_date_prompt '%F{yellow}' '%f'
+
+zstyle ':prompt:grml:left:setup' items rc history shell-level time date jdate virtual-env change-root newline change-root user at host path vcs percent
 
 #----------------------------------------------------------------------
 #  HOOKS
@@ -75,7 +86,6 @@ prompt grml-large
 # Command not found hook for Arch Linux (requires pkg-file)
 source /usr/share/doc/pkgfile/command-not-found.zsh
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 
 # Autojump requires(autojump)
 source /etc/profile.d/autojump.zsh
@@ -96,13 +106,3 @@ man() {
                 LESS_TERMCAP_us=$(printf "\e[1;32m") \
                         man "$@"
 }
-
-
-#Virtualenv support
-function virtual_env_prompt () {
-   REPLY=${VIRTUAL_ENV+(${VIRTUAL_ENV:t}) }
-}
-grml_theme_add_token  virtual-env -f virtual_env_prompt '%F{magenta}' '%f'
-zstyle ':prompt:grml:left:setup' items rc virtual-env change-root user at host path vcs percent
-
-

@@ -174,7 +174,7 @@ bindsym $mod+grave [class="^((?!ScratchPad).)*$"] scratchpad show
 # scratchpad terminal
 exec --no-startup-id "termite --class='ScratchPad'"
 for_window [class="ScratchPad"] floating enable, resize set 1366 384, move position 0 18, move scratchpad
-bindsym F3 [class="ScratchPad"] scratchpad show
+# bindsym F3 [class="ScratchPad"] scratchpad show
 
 # open rofi-pass
 bindsym $mod+x exec "rofi-pass"
@@ -210,14 +210,15 @@ for_window [workspace=2] layout tabbed
 for_window [workspace=3] layout tabbed
 
 # Startup Apps
-exec feh --bg-fill /home/ali/Pictures/Wallpapers/wallhaven-342160.jpg
+# exec feh --bg-fill /home/ali/Pictures/Wallpapers/wallhaven-342160.jpg
 exec setxkbmap -layout 'us,ir' -option grp:alt_shift_toggle, compose:ralt
 exec dunst
-exec redshift-gtk
+# exec redshift-gtk
 # exec udiskie -1 --tray
 exec parcellite
 exec ~/bin/i3_startup.sh
 exec ~/.i3/locker.sh
+exec variety
 exec rofi
 
 # Start i3bar to display a workspace bar (plus the system information i3status
