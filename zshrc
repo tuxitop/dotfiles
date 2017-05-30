@@ -2,7 +2,7 @@
 # Customizations to zshell. based on grml-zsh-config
 #
 # Author: Ali Mousavi
-# Last Updated: 2017/04/17
+# Last Updated: 2017/04/19
 #
 # Requirements:
 # zsh
@@ -11,6 +11,8 @@
 # pkgfile (for command not found hook in Arch Linux)
 # autojump
 # jdate (for jalali date in prompt)
+# zsh-syntax-highlighting
+# zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
 
 #----------------------------------------------------------------------
 #  CUSTOM ALIASES
@@ -85,10 +87,15 @@ zstyle ':prompt:grml:left:setup' items rc history shell-level time date jdate vi
 #----------------------------------------------------------------------
 # Command not found hook for Arch Linux (requires pkg-file)
 source /usr/share/doc/pkgfile/command-not-found.zsh
+
+# Fish like suggestions (requires https://github.com/zsh-users/zsh-autosuggestions)
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Autojump requires(autojump)
 source /etc/profile.d/autojump.zsh
+
+# ZSH syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #----------------------------------------------------------------------
 #  FUNCTIONS
