@@ -101,6 +101,11 @@
         create: true
         relink: false
         force: false
+    ~/.config/polybar:
+        path: config/polybar/
+        create: true
+        relink: false
+        force: false
     ~/.config/qtile:
         path: config/qtile/
         create: true
