@@ -13,6 +13,7 @@
 # jdate (for jalali date in prompt)
 # zsh-syntax-highlighting
 # zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
+# zsh-history-substring-search (https://github.com/zsh-users/zsh-history-substring-search)
 
 #----------------------------------------------------------------------
 #  CUSTOM ALIASES
@@ -96,6 +97,11 @@ source /etc/profile.d/autojump.zsh
 
 # ZSH syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# ZSH fish like history search (requires zsh-history-substring-search)
+source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[OA' history-substring-search-up
+bindkey '^[OB' history-substring-search-down
 
 #----------------------------------------------------------------------
 #  FUNCTIONS
