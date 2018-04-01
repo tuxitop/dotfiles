@@ -102,7 +102,7 @@ font-4 = Vazir Code:fontformat=truetype:size=10;0
 
 modules-left = music
 modules-center = 
-modules-right = netspeed filesystem memory cpu temperature vpn wlan jdate
+modules-right = netspeed filesystem memory cpu temperature openvpn wlan jdate
 
 
 ; tray-position = right
@@ -217,7 +217,7 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; icons
 ws-icon-0 = 1:term;
-ws-icon-1 = 2:www;
+ws-icon-1 = 2:www;
 ws-icon-2 = 3:im;
 ws-icon-3 = 4:fm;
 ws-icon-4 = 5:dev;
@@ -307,6 +307,7 @@ type = internal/network
 interface = ukvpn
 interval = 3.0
 
+
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = #00dd33
@@ -318,6 +319,17 @@ format-disconnected =
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/openvpn]
+type = custom/script
+exec = pgrep openvpn
+interval = 5
+label = tuxvpn
+
+format-underline = #55aa55
+format-prefix = " "
+format-prefix-foreground = #00dd33
+label-foreground = #00dd33
 
 [module/netspeed]
 type = internal/network
@@ -437,10 +449,10 @@ menu-0-1-exec = menu-open-2
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+menu-1-1-exec = systemctl reboot
 
 menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
+menu-2-0-exec = systemctl poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
