@@ -1,6 +1,7 @@
-Host archlinux.org
+Host aur.archlinux.org
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_rsa_arch
+  User aur
   # CheckHostIP yes
   # Port 22
 
