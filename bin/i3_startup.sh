@@ -28,13 +28,13 @@ if ! (tmux list-sessions 2>/dev/null | grep -q "^i3"); then
     termite -e "bash -c 'tmux new-session -s i3 -d; tmux split-window -h; tmux -2 attach-session -d'" 2>/dev/null 1>&2 &
 fi;
 
-# Start google-chrome if connected to Home Wireless.
+# Start firefox if connected to Home Wireless.
 # requires wireless_tools
 SSID=$(iwgetid -r)
 HOME_NET="theTerminal"
 if [[ $SSID = $HOME_NET ]]; then
-    if ! (echo $PS | grep -q google-chrome-stable ); then
-        google-chrome-stable 2>/dev/null 1>&2 &
+    if ! (echo $PS | grep -q firefox-developer ); then
+        firefox-developer-edition 2>/dev/null 1>&2 &
     fi;
     if ! (echo $PS | grep -q hexchat); then
         hexchat 2>/dev/null 1>&2 &
