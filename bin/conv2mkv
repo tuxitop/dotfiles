@@ -18,6 +18,9 @@
 # direcroty and its subdirectories recursively.
 #                 conv2mkv -dr
 
+ERROR_LOG="_ConversionE.log"
+
+
 # this function converts given filename
 convert2mkv() {
     INPUT="$1"
@@ -31,10 +34,12 @@ convert2mkv() {
     # This is the compression speed. the slower the better.
     PRESET="medium"        # veryslow > slower > slow > medium > fast > faster
                            # > veryfast > superfast > ultrafast
+    # Cut the name to 30 characters.
+    PV_NAME="$(basename "$1" | cut -c-30)"
 
     # check if the file already has the desired format and if so just copy it
     # to the new container.
-    if ffprobe "${INPUT}" 2>&1 | grep "Video: h264"; then
+    if ffprobe "${INPUT}" 2>&1 | grep -e "Video: h264" -e "Video: h265"; then
         VCODEC="copy"
     fi
     if ffprobe "${INPUT}" 2>&1 | grep "Audio: aac"; then
@@ -47,7 +52,9 @@ convert2mkv() {
         VCODEC="copy"
         ACODEC="copy"
     fi
-    ffmpeg -i "${INPUT}" -c:v "${VCODEC}" -preset ${PRESET} -c:a "${ACODEC}" -b:a ${ABITRATE} "${OUTPUT}"
+
+    # Do the conversion
+    pv -cN "(${2}/${3}) ${PV_NAME}" -F "%N %b %p %e" "${INPUT}" | ffmpeg -i pipe:0 -v warning -analyzeduration 100M -probesize 100M -c:v "${VCODEC}" -preset ${PRESET} -c:a "${ACODEC}" -b:a ${ABITRATE} "${OUTPUT}"
 }
 
 # export the function so that we can use it as an argument for -exec in find
@@ -66,25 +73,96 @@ fi
 case "$1" in
     # find and convert video files in the working dir and its subdirs.
     "-dr")
-        find . -type f \( -iname '*.mpg' -o \
+        VIDEOS=$(find . -type f \( -iname '*.mpg' -o \
             -iname '*.mpeg' -o \
             -iname '*.wmv' -o \
             -iname '*.mp4' -o \
             -iname '*.avi' -o \
             -iname '*.m4v' -o \
             -iname '*.flv' -o \
+            -iname '*.ogv' -o \
+            -iname '*.webm' -o \
             -iname '*.ts' \) \
-            -exec bash -c 'convert2mkv "$0"' {} \;;;
+            -exec echo "{}" \;)
+        NUM_VIDEOS=$(echo "${VIDEOS}" | wc -l)
+        INDEX=0
+        while read -r line; do
+            INDEX=$((INDEX+1))
+            convert2mkv "${line}" "${INDEX}" "${NUM_VIDEOS}"
+            
+            # Check if the frames count match and remove the original file
+            echo "checking the files..."
+            output="$(echo ${line} | sed -r -e 's/\.\w+$/.mkv/')"
+            orig_frames=$(ffprobe -show_packets "${line}" 2>/dev/null | grep video | wc -l)
+            echo "${line} -> ${orig_frames}"
+            new_frames=$(ffprobe -show_packets "${output}" 2>/dev/null | grep video | wc -l)
+            echo "${output} -> ${new_frames}"
+
+            if [ ${new_frames} -eq ${orig_frames} ]; then
+                echo "Match: removing ${line}"
+                rm -f "${line}"
+            else
+                echo "Warning: Frames mismatch, writing to the log file"
+                echo "${line}: ${orig_frames} --> ${new_frames}" >> ${ERROR_LOG}
+            fi
+
+        done <<< "${VIDEOS}";;
     "-d")
-        find . -maxdepth 1 -type f \( -iname '*.mpg' -o \
+        VIDEOS=$(find . -maxdepth 1 -type f \( -iname '*.mpg' -o \
             -iname '*.mpeg' -o \
             -iname '*.wmv' -o \
             -iname '*.mp4' -o \
             -iname '*.avi' -o \
             -iname '*.m4v' -o \
             -iname '*.flv' -o \
+            -iname '*.ogv' -o \
+            -iname '*.webm' -o \
             -iname '*.ts' \) \
-            -exec bash -c 'convert2mkv "$0"' {} \;;;
+            -exec echo "{}" \;)
+        NUM_VIDEOS=$(echo "${VIDEOS}" | wc -l)
+        INDEX=0
+        while read -r line; do
+            INDEX=$((INDEX+1))
+            convert2mkv "${line}" "${INDEX}" "${NUM_VIDEOS}"
+
+            # Check if the frames count match and remove the original file
+            echo "checking the files..."
+            output="$(echo ${line} | sed -r -e 's/\.\w+$/.mkv/')"
+            orig_frames=$(ffprobe -show_packets "${line}" 2>/dev/null | grep video | wc -l)
+            echo "${line} -> ${orig_frames}"
+            new_frames=$(ffprobe -show_packets "${output}" 2>/dev/null | grep video | wc -l)
+            echo "${output} -> ${new_frames}"
+
+            if [ ${new_frames} -eq ${orig_frames} ]; then
+                echo "Match: removing ${line}"
+                rm -f "${line}"
+            else
+                echo "Warning: Frames mismatch, writing to the log file"
+                echo "${line}: ${orig_frames} --> ${new_frames}" >> ${ERROR_LOG}
+            fi
+        done <<< "${VIDEOS}";;
     *)
-        convert2mkv "$1"
+    convert2mkv "$1" 1 1
+
+    # Check if the frames count match and remove the original file
+    echo "checking the files..."
+    output="$(echo $1 | sed -r -e 's/\.\w+$/.mkv/')"
+    orig_frames=$(ffprobe -show_packets "$1" 2>/dev/null | grep video | wc -l)
+    echo "$$1 -> ${orig_frames}"
+    new_frames=$(ffprobe -show_packets ${output} 2>/dev/null | grep video | wc -l)
+    echo "${output} -> ${new_frames}"
+
+    if [ ${new_frames} -eq ${orig_frames} ]; then
+        echo "Match: removing $1"
+        rm -f "$1"
+    else
+        echo "Warning: Frames mismatch"
+        echo "$1: ${orig_frames} --> ${new_frames}"
+    fi
 esac
+
+if [ -e ${ERROR_LOG} ]; then
+    echo "Errors where reported, check these files:"
+    cat ${ERROR_LOG}
+fi
+
