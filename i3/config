@@ -193,12 +193,21 @@ assign [class="TelegramDesktop"] 3:im
 assign [class="Hexchat"] 3:im
 
 ### Floating apps
-for_window [class="s?mplayer"] floating enable
+for_window [class="s?(mp|MP)layer"] floating enable
+for_window [class="mpv"] floating enable
 for_window [class="Wine"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="Uget-gtk"] floating enable
 for_window [class="net-filebot-.*"] floating enable
+for_window [class="File-roller"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Arandr"] floating enable
 for_window [window_role="pop-up"] floating enable
+for_window [class="Anki"] floating enable
+for_window [class="java" title="Rename"] floating enable
+for_window [class="java" title="Rename"] resize set 600 200
+for_window [class="Pinentry"] floating enable
+for_window [class="Gedit"] floating enable
 
 ### Workspaces
 workspace 1:term output LVDS1
@@ -215,7 +224,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always feh --bg-fill /home/ali/Pictures/Wallpapers/wallhaven-506337.jpg
 exec setxkbmap -layout 'us,ir' -option grp:alt_shift_toggle, compose:ralt
 exec dunst
-# exec redshift-gtk
+exec redshift-gtk
 # exec udiskie -1 --tray
 exec parcellite
 exec ~/bin/i3_startup.sh
