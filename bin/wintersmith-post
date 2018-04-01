@@ -1,0 +1,104 @@
+#! /bin/bash
+
+# filename:    wintersmith-post
+# description: Creates a new blog post for witersmith.
+# Author:      Ali Mousavi [ali.mousavi@gmail.com]
+
+################
+###  USAGE   ###
+################
+#
+#  wintersmith-post [url friendly title]
+#
+#  If you don't specify the title in the post, the title will be asked.
+#  Please make sure that your title is url friendly.
+#
+
+### Configuration:
+
+ARTICLES_DIR="./contents/articles"
+DIR_DATE_FORMAT="+%Y%m%d"                 # 20180402
+POST_DATE_FORMAT="+%Y-%m-%d"              # 2018-04-02
+FILE_NAME="index.md"
+AUTHOR="علی موسوی"
+DEFAULT_TEMPLATE="article.jade"           # Name of the template for the post
+RUN_EDITOR=true                           # Open the file in an editor on not.
+EDITOR_COMMAND="gedit"
+COLORS=true                               # Show colorful outputs
+
+# Define Colors:
+if [ ${COLORS} = true ];then
+    RESET=$'\e[0m'
+    RED=$'\e[31m'
+    GREEN=$'\e[32m'
+    BLUE=$'\e[34m'
+    YELLOW=$'\e[33m'
+    AQUA=$'\e[36m'
+fi
+
+
+# Check if the articles directory exists.
+if [ ! -d "${ARTICLES_DIR}"  ]; then
+    echo "${RED}Error:${RESET} Can't find ${BLUE}"${ARTICLES_DIR}"${RESET}. Make sure you are running this script from the root of your wintersmith application."
+    return 1
+fi
+
+# Find the title of the post
+if [ $# -eq 0 ]; then
+    # If no arguments provided
+    read -p "Enter your post ${YELLOW}Title${RESET}: ${AQUA}(Untitled)${RESET} " TITLE
+    TITLE="${TITLE:-Untitled}"
+else
+    read -e -p "Confirm the ${YELLOW}Title${RESET}: " -i "$@" TITLE
+fi
+
+# Get the date
+NOW="$(date '+%Y-%m-%d')"
+read -p "Enter post ${YELLOW}Date${RESET}: (${NOW}) " DATE
+DATE="${DATE:-$NOW}"
+
+# Get the post descrition
+read -p "Enter post ${YELLOW}Description${RESET}: (\"\")" DESCRIPTION
+
+# Get the post tags
+read -p "Enter post ${YELLOW}Tags${RESET} seperated with space: (\"\") " TAGS
+
+# Create post directory
+echo "${GREEN}Creating the post...${RESET}"
+DIR_PATH="${ARTICLES_DIR}/$(date --date=$DATE $DIR_DATE_FORMAT)_${TITLE}"
+mkdir "${DIR_PATH}"
+
+if [ ! $? -eq 0 ]; then
+    echo "${RED}Error:${RESET} Something went wrong while trying to create the ${BLUE}${DIR_PATH}${RESET} directory."
+    exit 1
+fi
+
+# Create the post
+FILE_PATH="${DIR_PATH}/${FILE_NAME}"
+
+cat > "${FILE_PATH}" << EOM
+---
+title: ${TITLE}
+author: ${AUTHOR}
+date: $(date --date=$DATE $POST_DATE_FORMAT)
+tags: ${TAGS}
+description: ${DESCRIPTION}
+mathjax: false
+template: ${DEFAULT_TEMPLATE}
+---
+
+
+EOM
+
+if [ ! $? -eq 0 ]; then
+    echo "${RED}Error:${RESET} Something went wrong while trying to create the post at ${BLUE}${FILE_PATH}${RESET}"
+    exit 1
+fi
+
+echo "${GREEN}Successfully created the new post at ${BLUE}${FILE_PATH}${RESET}"
+
+# Open the file in an editor if required:
+if [ "${RUN_EDITOR}" = true ]; then
+    echo "${GREEN}Opening the post with ${YELLOW}${EDITOR_COMMAND}${RESET}"
+    eval "${EDITOR_COMMAND} ${FILE_PATH} &"
+fi
