@@ -23,6 +23,7 @@
 alias grep='grep --color=auto'   # Colorful grep
 alias df='df -h'                 # Human readable size
 alias du='du -c -h'              # Human readable size and calculate grand total
+alias ls='ls -h'                 # Human readable size
 alias mkdir='mkdir -v'           # Verbose mode
 alias tmux='tmux -2'             # Enables 256 Colors in tmux
 
@@ -31,9 +32,11 @@ alias pi='ping 8.8.4.4'          # Ping Google's DNS
 alias top='htop'                 # Use htop instead of top (needs htop package)
 alias du1='du --max-depth=1'     # Compute size of current directory.
 alias ducks='du -cks * | sort -rn | head -20' # 20 largest files & Dirs
-alias retor='sudo systemctl restart tor' # Restart tor via systemd.
-alias awrc='vim ~/.config/awesome/rc.lua'
-alias aria2rpc='ruby /usr/share/doc/aria2/xmlrpc/aria2rpc'
+alias i3rc='vim ~/.i3/config'
+alias aria2rpc='ruby /usr/share/doc/aria2/xmlrpc/aria2rpc --secret pei3ziosah2oZae'
+alias vpnstart='sudo systemctl start openvpn-client@tuxvpn.service'
+alias vpnstop='sudo systemctl stop openvpn-client@tuxvpn.service'
+alias netreset='vpn stop && sudo systemctl restart netctl-auto@wlp3s0.service'
 
 # Privileged Access:
 alias svim='sudo vim'
@@ -55,10 +58,11 @@ alias chgrp='chgrp --preserve-root' # Don't operate recursively on "/"
 #  ENVIRONMENT VARAIBLES
 #----------------------------------------------------------------------
 
-export PATH=$PATH:$HOME/bin         # add directory for personal scripts
-export EDITOR=vim                   # Define default editor
+export PATH=$PATH:$HOME/bin           # add directory for personal scripts
+export PATH=$PATH:./node_modules/.bin # add node-modules bin directory to path
+export EDITOR=vim                     # Define default editor
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on' # Better fonts in java apps
-export QT_STYLE_OVERRIDE='GTK+'     # QT5 Style
+export QT_STYLE_OVERRIDE='GTK+'       # QT5 Style
 export PATH=$PATH:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/opt/android-sdk/build-tools:/home/ali/.gem/ruby/2.3.0/bin   # Add android sdk to path
 #export LC_TIME="en_US.utf8" # Gnome shows dates in persian. this should fix it.
 
