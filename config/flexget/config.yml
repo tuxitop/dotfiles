@@ -73,7 +73,7 @@ templates:
             allow_background: no
             auto_escape: no
             on_output:
-                for_accepted: ruby /usr/share/doc/aria2/xmlrpc/aria2rpc addUri "{{url}}" --dir="/home/ali/Downloads/aria2/flexget/Series/" --pause="true"
+                for_accepted: ruby /usr/share/doc/aria2/xmlrpc/aria2rpc addUri "{{url}}" --dir="/home/ali/Downloads/aria2/flexget/Series/" --pause="true" --secret "pei3ziosah2oZae"
         # Mark accepted torrents as collected in trakt.
         list_add:
             - trakt_list:
@@ -151,7 +151,7 @@ tasks:
             allow_background: no
             auto_escape: no
             on_output:
-                for_accepted: ruby /usr/share/doc/aria2/xmlrpc/aria2rpc addUri "{{url}}" --dir="/home/ali/Downloads/aria2/flexget/Series/" --pause="true"
+                for_accepted: ruby /usr/share/doc/aria2/xmlrpc/aria2rpc addUri "{{url}}" --dir="/home/ali/Downloads/aria2/flexget/Series/" --pause="true" --secret="pei3ziosah2oZae"
 #        aria2:
 #            exclude_samples: yes
 #            exclude_non_content: yes
@@ -166,11 +166,11 @@ tasks:
                 username: tuxitop
                 account: tuxitop
                 list: collection
-    series-piratebay:
-        priority: 60
-        template: trakt-shows-480
-        template: trakt-discover-show
-    series-any:
-        priority: 70
-        template: trakt-shows-any
-        template: trakt-discover-show
+    # series-piratebay:
+    #     priority: 60
+    #     template: trakt-shows-480
+    #     template: trakt-discover-show
+    # series-any:
+    #     priority: 70
+    #     template: trakt-shows-any
+    #     template: trakt-discover-show
