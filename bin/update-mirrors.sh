@@ -1,3 +1,13 @@
+if (( $UID )); then
+    echo 'You must be root.' >&2
+    exit 1
+fi
+
+if [ -x "$(hash reflector 2>/dev/null)" ]; then
+    echo 'reflector not found. Please install reflector package'
+    exit 1
+fi
+
 echo "backing up mirrorlist to /etc/pacman.d/mirrorlist.backup"
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 
