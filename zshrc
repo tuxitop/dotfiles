@@ -2,7 +2,7 @@
 # Customizations to zshell. based on grml-zsh-config
 #
 # Author: Ali Mousavi
-# Last Updated: 2017/04/19
+# Last Updated: 2018/04/02
 #
 # Requirements:
 # zsh
