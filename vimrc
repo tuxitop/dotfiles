@@ -71,7 +71,10 @@ set wildmenu
 set wildmode=full
 
 " set swap files directory to avoid polluting other directories
-set directory=~/.vim/swapfiles//
+if !isdirectory($HOME . "/.vim/swapfiles")
+    silent !mkdir ~/.vim/swapfiles/
+endif
+set directory=~/.vim/swapfiles/
 
 " hide unnecessary gui in gVim
 set guioptions-=m  " remove menu bar
@@ -81,6 +84,13 @@ set guioptions-=L " remove left-hand scroll bar
 
 " -------------------- PLUGIN CONFIGURATIONS --------------------
 " configurations for extra plugins.
+
+" Install vim-plug if not installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 " initiate vim-plug plugin manager.
 call plug#begin('~/.vim/plugged')
@@ -127,6 +137,14 @@ highlight clear SpellRare
 highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
+" Fix Color Scheme in vimdifU
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88
+
+" make ctrlp ignore some folders:
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 
 " airline plugin
 set laststatus=2                      " always load status bar
