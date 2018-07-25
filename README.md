@@ -1,7 +1,3 @@
-# dotfiles
-Collection of my important configuration files.
+# PROJECT MOVED
 
-## Setup
-```bash
-git clone https://github.com/tuxitop/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install
-```
+Please check [gitlab](https://gitlab.com/tuxitop/dotfiles) for my configuration files.
